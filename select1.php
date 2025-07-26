@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <meta charset="UTF-8">
 <?php
 $db = mysql_connect('localhost', 'paulmsummitt', 'N3ws8@10!') or die ("Unable to connect. Check your connection parameters.");
 mysql_select_db('moviesite', $db) or die(mysql_error($db));

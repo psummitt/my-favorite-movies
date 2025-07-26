@@ -7,7 +7,7 @@
 
 <?php
 //connect to MySQL
-$db = mysql_connect(‘localhost’, ‘paulmsummitt’, ‘N3ws8@10!’) or
+$db = mysql_connect(‘localhost’, ‘bp6am’, ‘bp6ampass’) or
     die (‘Unable to connect. Check your connection parameters.’);
 
 // make sure you’re using the right database

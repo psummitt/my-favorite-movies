@@ -7,8 +7,5 @@
     </head>
     <body>
         <h1>My Movie Site</h1>
-        <?php
-            include 'header.php'; 
-        ?>
     </body>
 </html>
