@@ -1,0 +1,14 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jul 28, 2025, 4:06:22 PM
+    Author     : paulmsummitt
+*/
+
+    ul {
+      list-style-type: none; /* Removes bullets from unordered lists */
+      padding: 0; /* Optional: Removes default padding */
+      margin: 0; /* Optional: Removes default margin */
+      }

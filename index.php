@@ -1,11 +1,96 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>My Movie Site</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta property="og:title" content="Paul M. Summitt's MY FAVORITE MOVIES">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://psummitt.github.io/psummitt/index.html">
+        <meta property="og:image" content="https://psummitt.github.io/psummitt/images/me.jpg">
+        <meta property="og:image:alt" content="Image of Paul M. Summitt">
+        <meta name="author" content="Paul M. Summitt">
+        <title>My Favorite Movies</title>
+
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+        
+        <!--    <div class="container-sm">100% wide until small breakpoint</div>
+        <div class="container-md">100% wide until medium breakpoint</div>
+        <div class="container-lg">100% wide until large breakpoint</div>
+        <div class="container-xl">100% wide until extra large breakpoint</div>
+        <div class="container-xxl">100% wide until extra extra large breakpoint</div> -->
+    
     </head>
     <body>
-        <h1>My Movie Site</h1>
+        <header>
+            <div class="container mt-5">
+                <div class="d-flex">
+                    <div class="flex-grow-1 bg-light border">
+                        <img src="img/movie-projector.jpg" alt="movie projector" >
+                    </div>
+                    <div class="flex-grow-1 bg-light border">
+                        <h1 class="display-1 text-center">My Favorite Movies</h1>
+                        <p class="text-center display-6">Welcome to my movie review site!<br/>
+                        <?php
+                        date_default_timezone_set('America/Chicago');
+                        echo "Today is ";
+                        echo date('F d');
+                        echo ', ';
+                        echo date('Y');
+                        ?>
+                        <br/>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <article>
+            <div class="container text-center">
+                <div class="row">
+                  <div class="col">
+                    <h3>Films I would like to see.</h3>
+                  </div>
+                  <div class="col">
+                      <h3>Films I have seen and reviewed.</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    400 Bullets
+                  </div>
+                  <div class="col">
+                    
+                  </div>
+                </div>
+            </div>
+        </article>
+        <footer class="bg-light">
+            <div class="container text-end">
+                <hr>
+                <p id="textfooter">Let's Keep in Touch!</p>
+                <!-- Social media and contact links. Add or remove any networks. -->
+                <ul>
+                    <li><a href="mailto:paulmsummitt@gmail.com"><img src="img/email-symbol-icon-vector.jpg" title="e-mail" width="20px" height="20px" alt="email enveloper icon">
+                            paulmsummitt@gmail.com</a></li>
+                    <li><a href="https://www.linkedin.com/in/paul-m-summitt/" target="_blank" rel="noopener">
+                            <img src="img/LinkedIn_Logo_558766.jpg" title="LinkedIn" width="20px" height="20px" alt="LinkedIn Icon">
+                            LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="container text-end">
+                <p id="textbottom">&copy;<span id="copyright">
+                    <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> Paul M. Summitt  All Rights Reserved.</p>
+                <p id="source"> source code :
+                    <a href="https://github.com/psummitt/psummitt"><img src="img/Github_Logo_White_on_Black.png" title="github" id="icongithub" width="20px" height="20px" alt="github icon"></a></p>
+                <hr>
+            </div>
+        </footer>
     </body>
 </html>
