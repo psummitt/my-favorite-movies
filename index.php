@@ -1,3 +1,41 @@
+<?php
+
+    // Connect to database 
+    $con = mysqli_connect("localhost","paulmsummitt","N3ws8@10!","MovieSite");
+    // mysqli_connect("servername","username","password","database_name")
+ 
+    // Get all the categories from category table
+    $sql = "SELECT * FROM `movie_id`";
+    $all_categories = mysqli_query($con,$sql);
+ 
+    // The following code checks if the submit button is clicked 
+    // and inserts the data in the database accordingly
+    if(isset($_POST['submit']))
+    {
+        // Store the Product name in a "name" variable
+        $name = mysqli_real_escape_string($con,$_POST['movie_name']);
+       
+        // Store the Category ID in a "id" variable
+        $id = mysqli_real_escape_string($con,$_POST['movie_id']); 
+       
+        // Creating an insert query using SQL syntax and
+        // storing it in a variable.
+        $sql_insert = 
+        "INSERT INTO `product`(`movie_name`, `movie_id`)
+            VALUES ('$name','$id')";
+         
+          // The following code attempts to execute the SQL query
+          // if the query executes with no errors 
+          // a javascript alert message is displayed
+          // which says the data is inserted successfully
+          if(mysqli_query($con,$sql_insert))
+        {
+            echo '<script>alert("Movie added successfully")</script>';
+        }
+    }
+?>
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -26,7 +64,7 @@
         <div class="container-lg">100% wide until large breakpoint</div>
         <div class="container-xl">100% wide until extra large breakpoint</div>
         <div class="container-xxl">100% wide until extra extra large breakpoint</div> -->
-    
+        
     </head>
     <body>
         <header>
@@ -55,10 +93,40 @@
             <div class="container text-center">
                 <div class="row">
                   <div class="col">
-                    <h3>Films I would like to see.</h3>
+                      <br>
+                      <h3>Films I have seen and reviewed.</h3>
                   </div>
                   <div class="col">
-                      <h3>Films I have seen and reviewed.</h3>
+                      <br>
+                      <h3>Add a film to our database.</h3>
+                          <form method="POST">
+                            <label>Name of Film:</label>
+                            <input type="text" name="movie_name" required><br>
+                            <label>Select a Film</label>
+                            <select name="Film">
+                                <?php 
+                                    // use a while loop to fetch data 
+                                    // from the $all_categories variable 
+                                    // and individually display as an option
+                                    while ($category = mysqli_fetch_array(
+                                            $all_categories,MYSQLI_ASSOC)):; 
+                                ?>
+                                    <option value="<?php echo $category["movie_id"];
+                                        // The value we usually set is the primary key
+                                    ?>">
+                                        <?php echo $category["movie_id"];
+                                            // To show the category name to the user
+                                        ?>
+                                    </option>
+                                <?php 
+                                    endwhile; 
+                                    // While loop must be terminated
+                                ?>
+                            </select>
+                            <br>
+                            <input type="submit" value="submit" name="submit">
+                        </form>
+                        <br>
                   </div>
                 </div>
                 <div class="row">
