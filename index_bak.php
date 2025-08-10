@@ -1,5 +1,18 @@
 <?php
 
+    session_start();
+    $_SESSION[‘username’] = $_POST[‘user’];
+    $_SESSION[‘userpass’] = $_POST[‘pass’];
+    $_SESSION[‘authuser’] = 0;
+    //Check username and password information
+    if (($_SESSION[‘username’] == ‘Joe’) and
+    ($_SESSION[‘userpass’] == ‘12345’)) {
+    $_SESSION[‘authuser’] = 1;
+    } else {
+        echo "Sorry, but you don't have permission to view this page.";
+        exit();
+    }
+
     // Connect to database 
     $con = mysqli_connect("localhost","paulmsummitt","N3ws8@10!","MovieSite");
     // mysqli_connect("servername","username","password","database_name")
@@ -12,10 +25,10 @@
     // and inserts the data in the database accordingly
     if(isset($_POST['submit']))
     {
-        // Store the Product name in a "name" variable
+        // Store the Movie name in a "name" variable
         $name = mysqli_real_escape_string($con,$_POST['movie_name']);
        
-        // Store the Category ID in a "id" variable
+        // Store the movieID in a "id" variable
         $id = mysqli_real_escape_string($con,$_POST['movie_id']); 
        
         // Creating an insert query using SQL syntax and
@@ -98,7 +111,7 @@
                   </div>
                   <div class="col">
                       <br>
-                      <h3>Add a film to our database.</h3>
+                      <h3>Add a film to our database that you would like to see discussed.</h3>
                           <form method="POST">
                             <label>Name of Film:</label>
                             <input type="text" name="movie_name" required><br>
